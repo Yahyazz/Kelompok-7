@@ -1,0 +1,11 @@
+fungsi luasSegitiga(a,b){
+  item luas = (a * b) / 2
+  cetak(luas)
+}
+cetak("silahkan masukkan alas segitiga")
+item alas = konversi_int(masukan())
+cetak("silahkan masukkan tinggi segitiga")
+item tinggi = konversi_int(masukan())
+
+cetak("Maka luas segitiganya adalah")
+luasSegitiga(alas, tinggi)
