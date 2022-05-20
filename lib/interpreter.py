@@ -975,7 +975,7 @@ class BuiltInFunction(BaseFunction):
 
     execute_jalankan.arg_names = ['fn']
 
-    def execute_to_str(self, exec_ctx):
+    def execute_konversi_str(self, exec_ctx):
         value = exec_ctx.symbol_table.get('value')
 
         if isinstance(value, BaseFunction):
@@ -987,7 +987,7 @@ class BuiltInFunction(BaseFunction):
 
         return RTResult().success(String(str(value)))
 
-    execute_to_str.arg_names = ['value']
+    execute_konversi_str.arg_names = ['value']
 
     def execute_konversi_int(self, exec_ctx):
         number = exec_ctx.symbol_table.get('number')
@@ -1003,7 +1003,7 @@ class BuiltInFunction(BaseFunction):
 
     execute_konversi_int.arg_names = ['number']
 
-    def execute_to_float(self, exec_ctx):
+    def execute_konversi_float(self, exec_ctx):
         number = exec_ctx.symbol_table.get('number')
 
         try:
@@ -1015,7 +1015,7 @@ class BuiltInFunction(BaseFunction):
                 exec_ctx
             ))
 
-    execute_to_float.arg_names = ['number']
+    execute_konversi_float.arg_names = ['number']
 
     def execute_abs(self, exec_ctx):
         number = exec_ctx.symbol_table.get('number')
@@ -1228,9 +1228,9 @@ BuiltInFunction.extend = BuiltInFunction("extend")
 BuiltInFunction.get = BuiltInFunction("get")
 BuiltInFunction.jalankan = BuiltInFunction("jalankan")
 BuiltInFunction.len = BuiltInFunction("len")
-BuiltInFunction.to_str = BuiltInFunction("to_str")
+BuiltInFunction.konversi_str = BuiltInFunction("konversi_str")
 BuiltInFunction.konversi_int = BuiltInFunction("konversi_int")
-BuiltInFunction.to_float = BuiltInFunction("to_float")
+BuiltInFunction.konversi_float = BuiltInFunction("konversi_float")
 BuiltInFunction.imports = BuiltInFunction("imports")
 BuiltInFunction.concat = BuiltInFunction("concat")
 BuiltInFunction.split_char = BuiltInFunction("split_char")
@@ -1683,9 +1683,9 @@ def reset_global_symbol_table():
     global_symbol_table.set("get", BuiltInFunction.get)
     global_symbol_table.set("jalankan", BuiltInFunction.jalankan)
     global_symbol_table.set("len", BuiltInFunction.len)
-    global_symbol_table.set("to_str", BuiltInFunction.to_str)
+    global_symbol_table.set("konversi_str", BuiltInFunction.konversi_str)
     global_symbol_table.set("konversi_int", BuiltInFunction.konversi_int)
-    global_symbol_table.set("to_float", BuiltInFunction.to_float)
+    global_symbol_table.set("konversi_float", BuiltInFunction.konversi_float)
     global_symbol_table.set("concat", BuiltInFunction.concat)
     global_symbol_table.set("split_char", BuiltInFunction.split_char)
     global_symbol_table.set("slice", BuiltInFunction.slice)
