@@ -11,7 +11,7 @@ def main(run_test=None):
         else:
             text = input('Persatuan> ')
 
-        if text == "exit":
+        if text == "keluar":
             break
         if text.strip() == '':
             continue
